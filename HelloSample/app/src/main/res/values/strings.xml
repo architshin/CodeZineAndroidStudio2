@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+CodeZine
+Android Studio 2で始めるアプリ開発入門
+
+イベントとリスナサンプル
+
+@author Shinzo SAITO
+
+res/values/string.xmlファイル
+-->
+<resources>
+
+	<string name="app_name">イベントとリスナサンプル</string>
+	<string name="tv_name">お名前を入力してください。</string>
+	<string name="bt_click">表示</string>
+
+</resources>
