@@ -23,9 +23,12 @@ public class HelloSampleActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_hello_sample);
 
-		Button button = (Button) findViewById(R.id.btClick);
+		Button btClick = (Button) findViewById(R.id.btClick);
 		HelloListener listener = new HelloListener();
-		button.setOnClickListener(listener);
+		btClick.setOnClickListener(listener);
+
+		Button btClear = (Button) findViewById(R.id.btClear);
+		btClear.setOnClickListener(listener);
 	}
 
 	/**
@@ -36,8 +39,18 @@ public class HelloSampleActivity extends AppCompatActivity {
 		public void onClick(View v) {
 			EditText input = (EditText) findViewById(R.id.etName);
 			TextView output = (TextView) findViewById(R.id.tvOutput);
-			String inputStr = input.getText().toString();
-			output.setText(inputStr + "さん、こんにちは!");
+
+			int id = v.getId();
+			switch(id) {
+				case R.id.btClick:
+					String inputStr = input.getText().toString();
+					output.setText(inputStr + "さん、こんにちは!");
+					break;
+				case R.id.btClear:
+					input.setText("");
+					output.setText("");
+					break;
+			}
 		}
 	}
 }
