@@ -36,11 +36,11 @@ public class HelloSampleActivity extends AppCompatActivity {
 	 */
 	private class HelloListener implements View.OnClickListener {
 		@Override
-		public void onClick(View v) {
+		public void onClick(View view) {
 			EditText input = (EditText) findViewById(R.id.etName);
 			TextView output = (TextView) findViewById(R.id.tvOutput);
 
-			int id = v.getId();
+			int id = view.getId();
 			switch(id) {
 				case R.id.btClick:
 					String inputStr = input.getText().toString();
