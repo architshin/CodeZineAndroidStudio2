@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -37,12 +38,14 @@ public class ListViewSampleActivity extends AppCompatActivity {
 
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-			ListView listView = (ListView) parent;
-			String item = (String) listView.getItemAtPosition(position);
+			String item = (String) parent.getItemAtPosition(position);
+
+//			TextView tvText = (TextView) view;
+//			String item = tvText.getText().toString();
 
 			String show = "あなたが選んだ定食: " + item;
 
-			Toast.makeText(ListViewSampleActivity.this, show, Toast.LENGTH_SHORT).show();
+			Toast.makeText(ListViewSampleActivity.this, show, Toast.LENGTH_LONG).show();
 		}
 	}
 }
