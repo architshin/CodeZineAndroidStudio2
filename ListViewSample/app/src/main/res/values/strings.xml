@@ -13,6 +13,7 @@ res/values/string.xmlファイル
 
 	<string name="app_name">リスト選択サンプル</string>
 
+	<!--
 	<string-array name="lv_menu">
 		<item>から揚げ定食</item>
 		<item>ハンバーグ定食</item>
@@ -26,5 +27,6 @@ res/values/string.xmlファイル
 		<item>焼き魚定食</item>
 		<item>焼肉定食</item>
 	</string-array>
+	-->
 
 </resources>
