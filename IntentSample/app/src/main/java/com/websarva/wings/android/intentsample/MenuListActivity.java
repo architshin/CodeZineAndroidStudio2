@@ -31,7 +31,6 @@ public class MenuListActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_menu_list);
 
 		ListView lvMenu = (ListView) findViewById(R.id.lvMenu);
-		lvMenu.setOnItemClickListener(new ListItemClickListener());
 
 		List<Map<String, String>> menuList = new ArrayList<Map<String, String>>();
 		
@@ -94,6 +93,8 @@ public class MenuListActivity extends AppCompatActivity {
 		int[] to = {android.R.id.text1, android.R.id.text2};
 		SimpleAdapter adapter = new SimpleAdapter(MenuListActivity.this, menuList, android.R.layout.simple_list_item_2, from, to);
 		lvMenu.setAdapter(adapter);
+
+		lvMenu.setOnItemClickListener(new ListItemClickListener());
 	}
 
 	/**

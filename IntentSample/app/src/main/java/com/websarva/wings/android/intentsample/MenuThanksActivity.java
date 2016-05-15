@@ -3,6 +3,7 @@ package com.websarva.wings.android.intentsample;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 /**
@@ -30,5 +31,13 @@ public class MenuThanksActivity extends AppCompatActivity {
 
 		tvMenuName.setText(menuName);
 		tvMenuPrice.setText(menuPrice);
+	}
+
+	/**
+	 * 戻るボタンをタップした時の処理。
+	 * @param view 画面部品。
+	 */
+	public void onBackButtonClick(View view) {
+		finish();
 	}
 }
