@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+CodeZine
+Android Studio 2で始めるアプリ開発入門
+メニューサンプル
+
+メニューリスト画面定義ファイル。
+
+@author Shinzo SAITO
+
+ファイル名=res/menu/menu_options_menu_list.xml
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+	<item
+		android:id="@+id/menuListOptionTeishoku"
+		app:showAsAction="never"
+		android:title="@string/menu_list_options_teishoku"/>
+	<item
+		android:id="@+id/menuListOptionCurry"
+		app:showAsAction="never"
+		android:title="@string/menu_list_options_curry"/>
+
+</menu>
