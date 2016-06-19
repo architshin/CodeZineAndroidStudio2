@@ -1,7 +1,5 @@
 package com.websarva.wings.android.menusample;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -108,11 +107,7 @@ public class MenuListActivity extends AppCompatActivity {
 		switch(itemId) {
 			case R.id.menuListContextDesc:
 				String desc = menu.get("desc");
-				AlertDialog.Builder builder = new AlertDialog.Builder(MenuListActivity.this);
-				builder.setMessage(desc);
-				builder.setPositiveButton(R.string.menu_list_dialog_desc_positive, new DescDialogButtonClickListener());
-				AlertDialog dialog = builder.create();
-				dialog.show();
+				Toast.makeText(MenuListActivity.this, desc, Toast.LENGTH_LONG).show();
 				break;
 			case R.id.menuListContextOrder:
 				order(menu);
@@ -254,14 +249,10 @@ public class MenuListActivity extends AppCompatActivity {
 		String menuName = menu.get("name");
 		String menuPrice = menu.get("price");
 
-		AlertDialog.Builder builder = new AlertDialog.Builder(MenuListActivity.this);
-		builder.setTitle(R.string.menu_list_dialog_order_title);
-		String message = getString(R.string.menu_list_dialog_order_message, menuName, menuPrice);
-		builder.setMessage(message);
-		builder.setPositiveButton(R.string.menu_list_dialog_order_positive, new OrderDialogButtonClickListener(menu));
-		builder.setNegativeButton(R.string.menu_list_dialog_order_negative, new OrderDialogButtonClickListener(menu));
-		AlertDialog dialog = builder.create();
-		dialog.show();
+		Intent intent = new Intent(MenuListActivity.this, MenuThanksActivity.class);
+		intent.putExtra("menuName", menuName);
+		intent.putExtra("menuPrice", menuPrice);
+		startActivity(intent);
 	}
 
 	/**
@@ -277,48 +268,5 @@ public class MenuListActivity extends AppCompatActivity {
 			Map<String, String> item = (Map<String, String>) parent.getItemAtPosition(position);
 			order(item);
 		}
-	}
-	/**
-	 * メニュー説明ダイアログのボタンが押されたときの処理が記述されたメンバクラス。
-	 */
-	private class DescDialogButtonClickListener implements DialogInterface.OnClickListener {
-
-		@Override
-		public void onClick(DialogInterface dialog, int which) {
-		}
-
-	}
-
-	/**
-	 * 注文確認ダイアログのボタンが押されたときの処理が記述されたメンバクラス。
-	 */
-	private class OrderDialogButtonClickListener implements DialogInterface.OnClickListener {
-
-		/**
-		 * 注文するメニューを表すMapオブジェクト。
-		 */
-		private Map<String, String> _menu;
-
-		/**
-		 * コンストラクタ。
-		 *
-		 * @param menu 注文するメニューを表すMapオブジェクト。
-		 */
-		public OrderDialogButtonClickListener(Map<String, String> menu) {
-			_menu = menu;
-		}
-
-		@Override
-		public void onClick(DialogInterface dialog, int which) {
-			if(which == DialogInterface.BUTTON_POSITIVE) {
-				String menuName = _menu.get("name");
-				String menuPrice = _menu.get("price");
-				Intent intent = new Intent(MenuListActivity.this, MenuThanksActivity.class);
-				intent.putExtra("menuName", menuName);
-				intent.putExtra("menuPrice", menuPrice);
-				startActivity(intent);
-			}
-		}
-
 	}
 }
