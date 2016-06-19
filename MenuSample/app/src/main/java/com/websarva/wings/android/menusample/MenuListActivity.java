@@ -31,16 +31,6 @@ import java.util.Map;
 public class MenuListActivity extends AppCompatActivity {
 
 	/**
-	 * SimpleAdapterの第4引数fromに使用する定数フィールド。
-	 */
-	private static final String[] FROM = {"name", "price"};
-
-	/**
-	 * SimpleAdapterの第5引数toに使用する定数フィールド。
-	 */
-	private static final int[] TO = {android.R.id.text1, android.R.id.text2};
-
-	/**
 	 * リストビューを表すフィールド。
 	 */
 	private ListView _lvMenu;
@@ -49,6 +39,16 @@ public class MenuListActivity extends AppCompatActivity {
 	 * リストビューに表示するリストデータ。
 	 */
 	private List<Map<String, String>> _menuList;
+
+	/**
+	 * SimpleAdapterの第4引数fromに使用する定数フィールド。
+	 */
+	private static final String[] FROM = {"name", "price"};
+
+	/**
+	 * SimpleAdapterの第5引数toに使用する定数フィールド。
+	 */
+	private static final int[] TO = {android.R.id.text1, android.R.id.text2};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +88,7 @@ public class MenuListActivity extends AppCompatActivity {
 
 		return super.onOptionsItemSelected(item);
 	}
+
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View view, ContextMenu.ContextMenuInfo menuInfo) {
 		super.onCreateContextMenu(menu, view, menuInfo);
@@ -100,8 +101,8 @@ public class MenuListActivity extends AppCompatActivity {
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
 		AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-		int listId = (int) info.id;
-		Map<String, String> menu = _menuList.get(listId);
+		int listPosition = info.position;
+		Map<String, String> menu = _menuList.get(listPosition);
 
 		int itemId = item.getItemId();
 		switch(itemId) {
