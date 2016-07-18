@@ -48,15 +48,6 @@ public class MenuListFragment extends Fragment {
 	}
 
 	@Override
-	public void onActivityCreated(Bundle savedInstanceState) {
-		super.onActivityCreated(savedInstanceState);
-		View menuThanksFrame = _parentActivity.findViewById(R.id.menuThanksFrame);
-		if(menuThanksFrame == null) {
-			_isLayoutXLarge = false;
-		}
-	}
-
-	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_menu_list, container, false);
 
@@ -128,6 +119,14 @@ public class MenuListFragment extends Fragment {
 		return view;
 	}
 
+	@Override
+	public void onActivityCreated(Bundle savedInstanceState) {
+		super.onActivityCreated(savedInstanceState);
+		View menuThanksFrame = _parentActivity.findViewById(R.id.menuThanksFrame);
+		if(menuThanksFrame == null) {
+			_isLayoutXLarge = false;
+		}
+	}
 
 	/**
 	 * リストが選択されたときの処理が記述されたメンバクラス。

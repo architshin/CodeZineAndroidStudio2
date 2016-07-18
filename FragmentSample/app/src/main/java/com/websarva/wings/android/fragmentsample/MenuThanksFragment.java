@@ -94,7 +94,8 @@ public class MenuThanksFragment extends Fragment {
 				FragmentTransaction transaction = manager.beginTransaction();
 				transaction.remove(MenuThanksFragment.this);
 				transaction.commit();
-			} else {
+			}
+			else {
 				_parentActivity.finish();
 			}
 		}
