@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+CodeZine
+Android Studio 2で始めるアプリ開発入門
+クラウド連携サンプル
+
+お天気詳細情報画面定義ファイル。
+
+@author Shinzo SAITO
+
+ファイル名=activity_weather_info.xml
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  android:layout_width="match_parent"
+			  android:layout_height="match_parent"
+			  android:orientation="vertical">
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="10dp"
+		android:gravity="center"
+		android:text="@string/tv_winfo_title"
+		android:textSize="25sp"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="10dp"
+		android:orientation="horizontal">
+
+		<TextView
+			android:id="@+id/tvCityName"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="20sp"/>
+
+		<TextView
+			android:id="@+id/tvWeatherTelop"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:textSize="20sp"
+			android:layout_weight="1"/>
+
+	</LinearLayout>
+
+	<TextView
+		android:id="@+id/tvWeatherDesc"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="30dp"
+		android:textSize="15sp"/>
+
+</LinearLayout>

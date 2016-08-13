@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+CodeZine
+Android Studio 2で始めるアプリ開発入門
+クラウド連携サンプル
+
+都市リスト画面定義ファイル。
+
+@author Shinzo SAITO
+
+ファイル名=activity_city_list.xml
+-->
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+		  android:id="@+id/lvCityList"
+		  android:layout_width="match_parent"
+		  android:layout_height="match_parent" />
