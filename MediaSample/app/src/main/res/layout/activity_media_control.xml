@@ -8,7 +8,7 @@ Android Studio 2で始めるアプリ開発入門
 
 @author Shinzo SAITO
 
-ファイル名=activity_sound_start.xml
+ファイル名=activity_media_control.xml
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 			  android:layout_width="match_parent"
