@@ -22,8 +22,14 @@ public class SoundStartActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_sound_start);
 
-		Button btPlay = (Button) findViewById(R.id.btPlay);
-		btPlay.setEnabled(true);
+		Intent intent = getIntent();
+		boolean fromNotification = intent.getBooleanExtra("fromNotification", false);
+		if(fromNotification) {
+			Button btPlay = (Button) findViewById(R.id.btPlay);
+			Button btStop = (Button) findViewById(R.id.btStop);
+			btPlay.setEnabled(false);
+			btStop.setEnabled(true);
+		}
 	}
 
 	/**
@@ -34,5 +40,23 @@ public class SoundStartActivity extends AppCompatActivity {
 	public void onPlayButtonClick(View view) {
 		Intent intent = new Intent(SoundStartActivity.this, SoundManageService.class);
 		startService(intent);
+		Button btPlay = (Button) findViewById(R.id.btPlay);
+		Button btStop = (Button) findViewById(R.id.btStop);
+		btPlay.setEnabled(false);
+		btStop.setEnabled(true);
+	}
+
+	/**
+	 * 停止ボタンタップ時の処理メソッド。
+	 *
+	 * @param view 画面部品
+	 */
+	public void onStopButtonClick(View view) {
+		Intent intent = new Intent(SoundStartActivity.this, SoundManageService.class);
+		stopService(intent);
+		Button btPlay = (Button) findViewById(R.id.btPlay);
+		Button btStop = (Button) findViewById(R.id.btStop);
+		btPlay.setEnabled(true);
+		btStop.setEnabled(false);
 	}
 }

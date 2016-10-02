@@ -2,6 +2,7 @@ package com.websarva.wings.android.servicesample;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -77,6 +78,21 @@ public class SoundManageService extends Service {
 			Log.i("Service", "再生開始");
 
 			mp.start();
+
+			NotificationCompat.Builder builder = new NotificationCompat.Builder(SoundManageService.this);
+			builder.setSmallIcon(android.R.drawable.ic_dialog_info);
+			builder.setContentTitle("再生開始");
+			builder.setContentText("音声ファイルの再生を開始しました");
+
+			Intent intent = new Intent(SoundManageService.this, SoundStartActivity.class);
+			intent.putExtra("fromNotification", true);
+			PendingIntent stopServiceIntent = PendingIntent.getActivity(SoundManageService.this, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+			builder.setContentIntent(stopServiceIntent);
+			builder.setAutoCancel(true);
+
+			Notification notification = builder.build();
+			NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+			manager.notify(1, notification);
 		}
 	}
 

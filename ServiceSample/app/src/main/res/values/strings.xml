@@ -12,7 +12,7 @@ res/values/string.xmlファイル
 <resources>
 
 	<string name="app_name">サービスサンプル</string>
-	<string name="bt_play">再生</string>
-	<string name="bt_playing">再生中</string>
+	<string name="bt_play_play">再生</string>
+	<string name="bt_play_stop">停止</string>
 
 </resources>

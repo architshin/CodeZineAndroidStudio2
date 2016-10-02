@@ -17,9 +17,16 @@ Android Studio 2で始めるアプリ開発入門
 
 	<Button
 		android:id="@+id/btPlay"
-		android:enabled="false"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:onClick="onPlayButtonClick"
-		android:text="@string/bt_play"/>
+		android:text="@string/bt_play_play"/>
+
+	<Button
+		android:id="@+id/btStop"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:enabled="false"
+		android:onClick="onStopButtonClick"
+		android:text="@string/bt_play_stop"/>
 </LinearLayout>
