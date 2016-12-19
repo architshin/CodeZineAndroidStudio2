@@ -1,0 +1,32 @@
+package com.websarva.wings.android.toolbarsample;
+
+import android.graphics.Color;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+
+/**
+ * CodeZine
+ * Android Studio 2で始めるアプリ開発入門
+ * ツールバーサンプル
+ *
+ * アクティビティクラス。
+ *
+ * @author Shinzo SAITO
+ */
+public class ScrollArticleActivity extends AppCompatActivity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_scroll_article);
+
+		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+		toolbar.setLogo(R.mipmap.ic_launcher);
+		toolbar.setTitle(R.string.toolbar_title);
+		toolbar.setTitleTextColor(Color.WHITE);
+		toolbar.setSubtitle(R.string.toolbar_subtitle);
+		toolbar.setSubtitleTextColor(Color.LTGRAY);
+		setSupportActionBar(toolbar);
+	}
+}
