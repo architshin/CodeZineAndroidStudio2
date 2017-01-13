@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+CodeZine
+Android Studio 2で始めるアプリ開発入門
+リサイクラービューサンプル
+
+@author Shinzo SAITO
+
+res/values/string.xmlファイル
+-->
+<resources>
+	<string name="app_name">リサイクラービューサンプル</string>
+	<string name="toolbar_title">Recycle!</string>
+	<string name="msg_header">ご注文の定食: </string>
+</resources>
